@@ -6,9 +6,29 @@ import ru.netology.radio.services.NewRadio;
 public class NewRadioTest {
 
     @Test
+    public void test() {
+        NewRadio radio = new NewRadio();
+        radio.setMaxRadioStation(10);
+        radio.standard();
+        int expected = 10;
+        int actual = radio.getMaxRadioStation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+
+    @Test
+    public void newTest() {
+        NewRadio radio = new NewRadio(30);
+        radio.setMaxRadioStation(29);
+        int expected = 28;
+        int actual = radio.getMaxRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void maxRadioStation() {
         NewRadio radio = new NewRadio();
-
         radio.setCurrentRadioStation(9);
         radio.next();
 
@@ -117,8 +137,8 @@ public class NewRadioTest {
     public void currentRadioVolume() {
         NewRadio radio = new NewRadio();
 
-        radio.setCurrentRadioVolume(10);
-        int expected = 10;
+        radio.setCurrentRadioVolume(100);
+        int expected = 100;
         int actual = radio.getCurrentRadioVolume();
         Assertions.assertEquals(expected, actual);
     }
@@ -127,7 +147,7 @@ public class NewRadioTest {
     public void overCurrentRadioVolume() {
         NewRadio radio = new NewRadio();
 
-        radio.setCurrentRadioVolume(11);
+        radio.setCurrentRadioVolume(101);
         int expected = 0;
         int actual = radio.getCurrentRadioVolume();
         Assertions.assertEquals(expected, actual);
