@@ -12,13 +12,9 @@ public class NewRadio {
         this.maxRadioStation = 9;
     }
 
-    public void standard() {
-        maxRadioStation = maxRadioStation + 1;
-    }
-
-
     public NewRadio(int radioStationCount) {
         this.maxRadioStation = radioStationCount - 1;
+
     }
 
     public int getMaxRadioStation() {
@@ -29,6 +25,9 @@ public class NewRadio {
         this.maxRadioStation = radioStationCount - 1;
     }
 
+    public void standard() {
+        maxRadioStation = maxRadioStation + 1;
+    }
 
     public void next() {
         if (currentRadioStation != maxRadioStation) {
